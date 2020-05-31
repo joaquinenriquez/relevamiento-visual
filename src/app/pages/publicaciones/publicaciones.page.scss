@@ -1,0 +1,48 @@
+.single-post-home{
+    margin-left: 0px !important; 
+    margin-right: 0px !important;
+    margin-bottom: 10px !important;
+    padding-top: 10px !important;
+    width:100% !important;
+    box-shadow: 1px 1px rgba(160, 160, 160, 0.453) !important;
+}
+
+.icono {
+    // margin-left: 10rem;
+    font-size: 2rem;
+}
+
+ion-toolbar {
+    --padding-start: 12px;
+}
+
+ion-title { 
+    font-family: 'Billabong';
+    font-size: 2rem;
+    padding-top: 3%;
+}
+
+
+@font-face {
+    font-family: 'Billabong';
+    src: url('../../../assets/fonts/Billabong.ttf');//mine
+  }
+
+
+ion-toolbar {
+    --padding-start: 12px;
+}
+
+
+ion-card-content {
+    width: 100%;
+    height: 100%;       
+    font-family: "Billabong";
+    font-size: 2rem;
+    color:white
+}
+
+ion-card-content.md.card-content-md.hydrated {
+    padding: 0px;
+    margin: 0pc;
+}

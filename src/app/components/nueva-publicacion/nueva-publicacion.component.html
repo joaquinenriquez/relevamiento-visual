@@ -1,0 +1,90 @@
+<ion-header>
+
+  <ion-toolbar [color]="this.tipoPublicacion.colorPrincipal">
+
+    <ion-icon slot="start" [src]="this.tipoPublicacion.pathIcono" class="icono"></ion-icon>
+    <ion-title>{{this.tipoPublicacion.titulo}}</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+<ion-content color="dark" class="no-scroll">
+  
+  <div *ngIf="foto !== undefined"><ion-progress-bar [color]="this.tipoPublicacion.colorPrincipal" [value]="(this.almacenFotos.porcentajeSubido | async) / 100"></ion-progress-bar></div>
+
+  <ion-card style="height: 95%" [color]="this.tipoPublicacion.colorSecundario" class="no-scroll">
+
+    <ion-item [color]="this.tipoPublicacion.colorPrincipal">
+      <ion-avatar slot="start">
+        <ion-img [src]="fotoUsuarioActual"></ion-img>
+      </ion-avatar>
+      <ion-label>{{usuarioActual.email }}</ion-label>
+    </ion-item>
+
+
+    <ion-card-content>
+
+      <!-- Mosstramos este mensaje cuando no tenemos noticias. Utilizamos Sliders porque es una manera facil de centrar el texto -->
+
+      <ion-slides [options]="sliderOpts" *ngIf="foto === undefined">
+        <ion-slide class="watermarked">
+          <ion-label style="opacity: 0.8;">Toma una fotografía o sube una desde la galería</ion-label>
+        </ion-slide>
+      </ion-slides>
+
+      <ion-img class="foto" *ngIf="foto !== undefined" [src]="foto"></ion-img>
+
+
+  
+
+    </ion-card-content>
+
+  </ion-card>
+
+
+
+</ion-content>
+
+<ion-footer>
+
+  <ion-toolbar no-padding no-margin [color]="this.tipoPublicacion.colorPrincipal">
+
+    <ion-segment *ngIf="foto === undefined">
+      <ion-segment-button value="camara" (click)="tomarUnaFoto()">
+        <div style="margin-right: 50%;">
+          <ion-icon name="camera-outline" class="icon"></ion-icon>
+          <ion-label class="text">Cámara</ion-label>
+        </div>
+      </ion-segment-button>
+
+
+      <ion-segment-button style="align-items: center;" value="galeria" (click)="abrirGaleria()">
+        <div>
+          <ion-label class="text">Galería</ion-label>
+          <ion-icon name="images-outline" class="icon"></ion-icon>
+        </div>
+      </ion-segment-button>
+
+    </ion-segment>
+
+    <ion-segment *ngIf="foto !== undefined">
+      <ion-segment-button value="aceptar" (click)="publicar()">
+        <div style="margin-right: 50%;">
+          <ion-icon name="checkmark-outline" class="icon"></ion-icon>
+          <ion-label class="text">Publicar</ion-label>
+        </div>
+      </ion-segment-button>
+
+      <ion-segment-button style="align-items: center;" value="galeria" (click)="cancelarPublicacion()">
+        <div>
+          <ion-label class="text">Cancelar</ion-label>
+          <ion-icon name="close-outline" class="icon"></ion-icon>
+        </div>
+      </ion-segment-button>
+
+    </ion-segment>
+
+
+  </ion-toolbar>
+
+</ion-footer>

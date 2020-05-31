@@ -24,3 +24,89 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+span.action-sheet-button-inner.sc-ion-action-sheet-md {
+    margin: 0;
+    height: 2rem;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    border-style: none;
+    outline: 0px;
+    color: white;
+}
+
+div.action-sheet-group.sc-ion-action-sheet-md {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    width: 100%;
+    // max-width: 400px;
+    padding: 5px;
+    text-align: center;
+    // margin: auto;
+    // margin-top: 40px;
+    animation: cambia-color 10s linear infinite;
+    background: -webkit-linear-gradient(left, #7a26dd, #e80808);
+    background-size: 400% 400%;
+}
+
+div.action-sheet-title.sc-ion-action-sheet-md {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+body > app-root > ion-app > ion-router-outlet > app-login > form > button {
+    height: 50px;
+    padding: 0px !important;
+}
+
+
+.cosas-feas-loading {
+    --background:#fcc664;
+    background: transparent;
+    --spinner-color: white;
+    filter: alpha(opacity=50);
+    color: white;
+    font-size: 1.1em;
+
+}
+
+
+.cosas-feas-toast {
+    --background:#fcc664;
+    background: transparent;
+    filter: alpha(opacity=50);
+    color: white;
+    font-size: 1em;
+    --border-radius: 2em;
+    --max-width: 75%;
+}
+
+.cosas-lindas-loading {
+    --background:#8134af;
+    background: transparent;
+    --spinner-color: white;
+    filter: alpha(opacity=50);
+    color: white;
+    font-size: 1.1em;
+
+}
+
+
+.cosas-lindas-toast {
+    --background:#8134af;
+    background: transparent;
+    filter: alpha(opacity=50);
+    color: white;
+    font-size: 1em;
+    --border-radius: 2em;
+    --max-width: 75%;
+}

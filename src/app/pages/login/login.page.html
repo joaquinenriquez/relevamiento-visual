@@ -1,0 +1,42 @@
+<form [formGroup]="this.loginForm"  (ngSubmit)="iniciarSesion()">
+
+  <h4 class="title">Español (Argentina)</h4>
+
+  <br>
+  <br>
+
+  <ion-label class="tituloApp logotipo">Relevamiento Visual</ion-label>
+
+  <input name="email" formControlName="email" type="text" placeholder="Nombre Usuario">
+  <input type="password" formControlName="password" placeholder="Contraseña" name="password">
+
+  <button (click)="iniciarSesion()" [ngClass]="{'boton-habilitado':this.loginForm.valid}">
+      <span *ngIf="!mostrarSpinner">Iniciar Sesión</span>
+      <ion-spinner *ngIf="mostrarSpinner" class="spinner" [paused]="this.pausarSpinner" name="bubbles" duration=10
+          color="white"></ion-spinner>
+  </button>
+
+
+  <div class="container-data">
+      <h4>¿Ha olvidado sus datos?</h4>
+      <a href="#">Obtener ayuda aquí</a>
+  </div>
+
+  <div class="container-or">
+      <hr>
+      <h2>Testing</h2>
+      <hr>
+  </div>
+
+  <ion-select [interfaceOptions]="opcionesDelActionSheet" interface="action-sheet" placeholder="Seleccionar uno"
+      cancel-text="Cancelar" (ionChange)="cambioDeUsuario($event)">
+      <ion-select-option *ngFor="let unUsuarioTesting of usuariosTesting" value={{unUsuarioTesting.id}}>{{ unUsuarioTesting.email }}
+      </ion-select-option>
+  </ion-select>
+
+
+  <div class="container-register">
+      <h4>¿No tiene una cuenta?</h4>
+      <a href="#">Regístrate</a>
+  </div>
+</form>

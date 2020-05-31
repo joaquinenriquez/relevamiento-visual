@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+
+  <ion-grid class="grilla">
+
+    <ion-row class="filas">
+
+      <ion-button color="colorcosaslindas" expand="full" class="botonesPrincipales btnCosasLindas"
+        (click)="botonCosasLindas_Click()">
+        <div>
+          <ion-icon color="success" src="assets/svg/cosaslindas_outline.svg" class="icono" slot="start"></ion-icon><br>
+          <ion-label color="success" class="labelBotonCosasLindas">Cosas Lindas</ion-label>
+        </div>
+      </ion-button>
+
+    </ion-row>
+
+    <ion-row class="filas">
+
+      <ion-button color="colorcosasfeas" expand="full" class="botonesPrincipales" (click)="botonCosasFeas_Click()">
+        <div>
+          <ion-icon color="danger" src="assets/svg/cosasfeas_outline.svg" class="icono"></ion-icon><br>
+          <ion-label color="danger" class="labelBotonCosasFeas">Cosas Feas</ion-label>
+        </div>
+      </ion-button>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
