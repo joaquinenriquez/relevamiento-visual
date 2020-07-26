@@ -10,6 +10,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+
+  mostrarSplash: Boolean = true;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -22,6 +25,16 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+
+            let audio = new Audio('../assets/sounds/camara.wav');
+      
+      setTimeout(() => {
+        audio.play();
+        setTimeout(() => { this.mostrarSplash = false;}, 6000);
+      }, 3000);
+
+
     });
   }
 }

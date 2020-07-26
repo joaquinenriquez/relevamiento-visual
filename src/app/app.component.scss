@@ -1,0 +1,118 @@
+@import "~animate.css/animate.css";
+
+
+#divSuperPuesto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+
+    animation: cambia-color 10s linear infinite;
+  background: -webkit-linear-gradient(left, #7a26dd, #e80808);
+}
+
+@keyframes cambia-color{
+  0%{
+      background-position: 0%, 50%;
+  }
+  
+  50%{
+      background-position: 100%, 50%;
+  }
+  
+  100%{
+      background-position: 0%, 100%;
+  }
+}
+
+#divSplash {
+  --background: none;
+  // background: url("../assets/img/fondoSplashAlarma-01.png") no-repeat center / cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#escudo {
+  position: absolute; // Para poder posicionarlo donde queramos
+  width: 50%; // Valores iniciales
+  top: 20%; // Valores iniciales
+  left: 25%; // Valores iniciales
+  z-index: 100000; // Un valor alto hace que se oculte detras de todo
+
+//   animation-name: zoomIn; // Nombre de la animacion que le vamos a aplicar / crear
+//   animation-duration: 3s; // Duracion del efecto: cuanto mas largo mas lento
+  
+}
+
+
+#nombreApp {
+
+  font-family: 'tituloApp';
+  color:white;
+  font-size: 3em;
+
+  position: absolute;
+  top: 50%;
+//   animation-name: bajar;
+//   animation-duration: 5s;
+}
+
+#alumnoDivision {
+  font-family: 'tituloApp';
+  color: white;
+     font-size: 2em; 
+  position: absolute;
+  bottom: 8%;
+//   animation-name: subir;
+//   animation-duration: 5s;
+}
+
+
+@font-face {
+  font-family: 'tituloApp';
+  src: url('../assets/fonts/Billabong.ttf');
+}
+
+@keyframes zoomIn {
+
+  from {
+      position: absolute; // Para poder posicionarlo donde queramos
+      top: 0%;
+      left: 0%;
+      width: 100%;
+  }
+
+
+
+  to {
+      // margin-left: 0%;
+      // width: 100%;
+      // opacity: 1;
+  }
+
+}
+
+
+@keyframes bajar 
+{
+  from {
+      top:0px;
+  }
+}
+
+@keyframes subir
+{
+  from {
+      bottom:-10%;
+  }
+}
+
+:root {
+  --animate-duration: 10s;
+}

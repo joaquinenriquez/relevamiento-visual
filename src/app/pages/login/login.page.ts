@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Capacitor } from '@capacitor/core';
+const { Motion } = Capacitor.Plugins;
 
 @Component({
   selector: 'app-login',
@@ -49,12 +51,20 @@ export class LoginPage implements OnInit {
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
       })
+
+      Capacitor.Plugins.Motion.addListener('accel', (event) => {
+        console.log(event);
+      
+      });
+
   }
 
   // #region Méotodos
 
 
   async iniciarSesion() {
+
+    DeviceMotionEvent
 
     if (this.loginForm.invalid) {
       return;

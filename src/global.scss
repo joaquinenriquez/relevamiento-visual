@@ -25,6 +25,7 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@import "~animate.css/animate.css";
 
 span.action-sheet-button-inner.sc-ion-action-sheet-md {
     margin: 0;
@@ -110,3 +111,8 @@ body > app-root > ion-app > ion-router-outlet > app-login > form > button {
     --border-radius: 2em;
     --max-width: 75%;
 }
+
+:root {
+    --animate-duration: 2500ms;
+    --animate-delay: 0.9s;
+  }
